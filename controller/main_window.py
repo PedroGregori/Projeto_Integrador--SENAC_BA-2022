@@ -5,16 +5,22 @@ from PyQt5 import uic
 
 FILE_UI = 'view/main_window.ui'
 
+
 class MainWindow(QMainWindow):
+
+    managementMenuEnable = False
+
     def __init__(self):
         QMainWindow.__init__(self)
-        uic.loadUi(FILE_UI, self)   
+        uic.loadUi(FILE_UI, self)
 
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(150, True))
         self.Btn_Management.clicked.connect(
             lambda: self.managementMenu(141, True))
-        
+
+        self.frame_management.setFixedHeight(0)
+
     def toggleMenu(self, maxWidth, enable):
         if enable:
             # GET WIDTH
@@ -27,7 +33,7 @@ class MainWindow(QMainWindow):
             widthExtended = maxExtend
         else:
             widthExtended = standard
-            
+
             # ANIMATION
         self.animation = QPropertyAnimation(
             self.frame_dashboard, b"minimumWidth")
@@ -36,9 +42,15 @@ class MainWindow(QMainWindow):
         self.animation.setEndValue(widthExtended)
         self.animation.setEasingCurve(QEasingCurve.Type.InOutQuart)
         self.animation.start()
-            
+
     def managementMenu(self, maxHeight, enable):
-        if enable:
+        if self.managementMenuEnable:
+            self.frame_management.setFixedHeight(0)
+        else:
+            self.frame_management.setFixedHeight(maxHeight)
+
+        self.managementMenuEnable = not self.managementMenuEnable
+        """if enable:
             # GET WIDTH
             height = self.frame_management.height()
             maxExtend = maxHeight
@@ -55,5 +67,5 @@ class MainWindow(QMainWindow):
         self.animation.setDuration(400)
         self.animation.setStartValue(height)
         self.animation.setEndValue(heightExtended)
-        self.animation.setEasingCurve(QEasingCurve.Type.InOutQuart)
-        self.animation.start()
+        self.animation.setEasingCurve(QEasingCurve.Type.Linear)
+        self.animation.start()"""

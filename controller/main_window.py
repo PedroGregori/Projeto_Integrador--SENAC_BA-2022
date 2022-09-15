@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QMainWindow, QStatusBar
 
 from controller.home import Home_ui
 from controller.sale import Sale_ui
-from controller.customer_registration import Customer_ui
+from controller.customer_management import Customer_ui
 
 
 

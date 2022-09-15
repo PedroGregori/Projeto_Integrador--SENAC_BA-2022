@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="tittle">
      <property name="font">
       <font>
        <family>Roboto</family>
@@ -109,21 +109,21 @@
        <item row="5" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="Btn_Add">
            <property name="text">
             <string>Adicionar</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="Btn_Edit">
            <property name="text">
             <string>Editar Informações</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="Btn_Delete">
            <property name="text">
             <string>Deletar</string>
            </property>
@@ -147,7 +147,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QFrame" name="frame">
+      <widget class="QFrame" name="frame_purchasesData">
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -168,7 +168,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QFrame" name="frame_2">
+         <widget class="QFrame" name="frame_quantity">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -186,7 +186,7 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_2">
+            <widget class="QLabel" name="quantity_of_purchases">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -198,7 +198,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_5">
+            <widget class="QLabel" name="quantity">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -216,7 +216,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="frame_4">
+         <widget class="QFrame" name="frame_totalPurchases">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -234,7 +234,7 @@
             <number>2</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_3">
+            <widget class="QLabel" name="total_purchases">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -246,7 +246,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_6">
+            <widget class="QLabel" name="value">
              <property name="font">
               <font>
                <family>Roboto</family>
@@ -287,9 +287,9 @@
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="table_verticaLayout">
      <item>
-      <widget class="QFrame" name="frame_3">
+      <widget class="QFrame" name="frame_search">
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -310,7 +310,7 @@
          <number>4</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="table_name">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -323,7 +323,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="search">
           <property name="placeholderText">
            <string>Pesquisar por nome de cliente</string>
           </property>
@@ -333,7 +333,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="table">
        <column>
         <property name="text">
          <string>ID</string>

@@ -55,7 +55,11 @@ class Customer_ui(QWidget):
         pass
 
     def delete(self):
-        pass
+        lineSel = self.table.currentRow()
+        lineItem = self.table.item(lineSel, 0)
+        id = lineItem.text()
+        self.table.removeRow(lineSel)
+        CustomerDAO.delete(int(id))
             
         
     def addTableItem(self, c: Customer):

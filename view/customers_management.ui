@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
-    <widget class="QLabel" name="tittle">
+    <widget class="QLabel" name="title">
      <property name="font">
       <font>
        <family>Roboto</family>
@@ -334,6 +334,15 @@
      </item>
      <item>
       <widget class="QTableWidget" name="table">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::DashLine</enum>
+       </property>
        <column>
         <property name="text">
          <string>ID</string>

@@ -10,7 +10,6 @@ from controller.sale import Sale_ui
 from controller.customer_management import Customer_ui
 
 
-
 FILE_UI = 'view/main_window.ui'
 
 
@@ -25,15 +24,15 @@ class MainWindow(QMainWindow):
         self.pageHome = Home_ui()
         self.pageSale = Sale_ui()
         self.pageCustomer = Customer_ui()
-        
+
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageSale)
         self.stackedWidget.addWidget(self.pageCustomer)
-        
+
         self.Btn_Home.clicked.connect(self.actionMenu)
         self.Btn_Sale.clicked.connect(self.actionMenu)
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
-        
+
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(150, True))
         self.Btn_Management.clicked.connect(
@@ -51,20 +50,20 @@ class MainWindow(QMainWindow):
 
         now = QDate.currentDate()
 
-        #print(now.toString(Qt.ISODate))
-        #print(now.toString(Qt.DefaultLocaleLongDate))
+        # print(now.toString(Qt.ISODate))
+        # print(now.toString(Qt.DefaultLocaleLongDate))
 
         datetime = QDateTime.currentDateTime()
 
-        #print(datetime.toString())
+        # print(datetime.toString())
 
         time = QTime.currentTime()
 
-        #print(time.toString(Qt.DefaultLocaleLongDate))
+        # print(time.toString(Qt.DefaultLocaleLongDate))
 
         self.statusBar.showMessage(
             f'{now.toString(Qt.DefaultLocaleLongDate)} - {time.toString()} ')
-    
+
     def actionMenu(self):
         btn = self.sender()
         btnName = btn.objectName()
@@ -73,9 +72,8 @@ class MainWindow(QMainWindow):
         if btnName == "Btn_Sale":
             self.stackedWidget.setCurrentIndex(1)
         if btnName == "Btn_CustomerReg":
-            self.stackedWidget.setCurrentIndex(2)    
-        
-        
+            self.stackedWidget.setCurrentIndex(2)
+
     def toggleMenu(self, maxWidth, enable):
         if enable:
             # GET WIDTH
@@ -105,6 +103,7 @@ class MainWindow(QMainWindow):
             self.frame_management.setFixedHeight(maxHeight)
 
         self.managementMenuEnable = not self.managementMenuEnable
+
         """if enable:
             # GET WIDTH
             height = self.frame_management.height()
@@ -124,4 +123,3 @@ class MainWindow(QMainWindow):
         self.animation.setEndValue(heightExtended)
         self.animation.setEasingCurve(QEasingCurve.Type.Linear)
         self.animation.start()"""
-

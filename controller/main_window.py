@@ -8,6 +8,11 @@ from PyQt5.QtWidgets import QMainWindow, QStatusBar
 from controller.home import Home_ui
 from controller.sale import Sale_ui
 from controller.customer_management import Customer_ui
+from controller.employees_management import Employees_ui
+from controller.providers_management import Providers_ui
+from controller.stock_management import Stock_ui
+from controller.expenses_management import Expenses_ui
+from controller.sales_management import SalesManagement_ui
 
 
 FILE_UI = 'view/main_window.ui'
@@ -24,14 +29,30 @@ class MainWindow(QMainWindow):
         self.pageHome = Home_ui()
         self.pageSale = Sale_ui()
         self.pageCustomer = Customer_ui()
+        self.pageEmployees = Employees_ui()
+        self.pageProviders = Providers_ui()
+        self.pageStock = Stock_ui()
+        self.pageSales_management = SalesManagement_ui()
+        self.pageExpenses = Expenses_ui()
 
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageSale)
         self.stackedWidget.addWidget(self.pageCustomer)
+        self.stackedWidget.addWidget(self.pageEmployees)
+        self.stackedWidget.addWidget(self.pageProviders)
+        self.stackedWidget.addWidget(self.pageStock)
+        self.stackedWidget.addWidget(self.pageExpenses)
+        self.stackedWidget.addWidget(self.pageSales_management)
+        
 
         self.Btn_Home.clicked.connect(self.actionMenu)
         self.Btn_Sale.clicked.connect(self.actionMenu)
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
+        self.Btn_employees.clicked.connect(self.actionMenu)
+        self.Btn_providers.clicked.connect(self.actionMenu)
+        self.Btn_stock.clicked.connect(self.actionMenu)
+        self.Btn_expenses.clicked.connect(self.actionMenu)
+        self.Btn_salesManagement.clicked.connect(self.actionMenu)
 
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(150, True))
@@ -73,6 +94,17 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(1)
         if btnName == "Btn_CustomerReg":
             self.stackedWidget.setCurrentIndex(2)
+        if btnName == "Btn_employees":
+            self.stackedWidget.setCurrentIndex(3)
+        if btnName == "Btn_providers":
+            self.stackedWidget.setCurrentIndex(4)
+        if btnName == "Btn_stock":
+            self.stackedWidget.setCurrentIndex(5)
+        if btnName == "Btn_expenses":
+            self.stackedWidget.setCurrentIndex(6)
+        if btnName == "Btn_salesManagement":
+            self.stackedWidget.setCurrentIndex(7)
+            
 
     def toggleMenu(self, maxWidth, enable):
         if enable:

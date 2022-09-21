@@ -57,7 +57,7 @@ QPushButton{
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>40</height>
+        <height>36</height>
        </size>
       </property>
       <property name="frameShape">
@@ -80,72 +80,39 @@ QPushButton{
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_toggle">
+        <widget class="QPushButton" name="Btn_Toggle">
          <property name="minimumSize">
           <size>
-           <width>48</width>
-           <height>40</height>
+           <width>40</width>
+           <height>30</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>48</width>
-           <height>40</height>
+           <width>42</width>
+           <height>34</height>
           </size>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+         <property name="text">
+          <string/>
          </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+         <property name="icon">
+          <iconset>
+           <normaloff>../assets/icons/menu.png</normaloff>../assets/icons/menu.png</iconset>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QPushButton" name="Btn_Toggle">
-            <property name="minimumSize">
-             <size>
-              <width>48</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>48</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/menu.png</normaloff>../assets/icons/menu.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="tittle">
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="text">
@@ -173,24 +140,33 @@ QPushButton{
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>1</number>
+          </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="rightMargin">
            <number>4</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <item>
            <widget class="QLabel" name="label_13">
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>24</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>38</width>
-              <height>16777215</height>
+              <width>32</width>
+              <height>31</height>
              </size>
             </property>
             <property name="text">
@@ -205,38 +181,62 @@ QPushButton{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <property name="spacing">
-             <number>4</number>
+           <widget class="QFrame" name="frame_userName">
+            <property name="maximumSize">
+             <size>
+              <width>124</width>
+              <height>16777215</height>
+             </size>
             </property>
-            <item>
-             <widget class="QLabel" name="label_11">
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Nome Ficticio da Silva</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_12">
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Funcionario</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Nome Ficticio da Silva</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_12">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Funcionario</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -310,21 +310,21 @@ QPushButton{
              <item>
               <widget class="QPushButton" name="Btn_Home">
                <property name="text">
-                <string>Home</string>
+                <string>Pagína Inicial</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="Btn_Sale">
                <property name="text">
-                <string>venda</string>
+                <string>Realizar Venda</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="Btn_CustomerReg">
                <property name="text">
-                <string>cad cliente</string>
+                <string>Cadastro de Clientes</string>
                </property>
               </widget>
              </item>
@@ -352,6 +352,12 @@ QPushButton{
           </item>
           <item>
            <widget class="QFrame" name="frame_management">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -378,37 +384,37 @@ QPushButton{
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="Btn_employees">
                <property name="text">
-                <string>PushButton</string>
+                <string>Funcionários</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="Btn_providers">
                <property name="text">
-                <string>PushButton</string>
+                <string>Fornecedores</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="Btn_stock">
                <property name="text">
-                <string>PushButton</string>
+                <string>Estoque</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="Btn_expenses">
                <property name="text">
-                <string>PushButton</string>
+                <string>Custos</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_5">
+              <widget class="QPushButton" name="Btn_salesManagement">
                <property name="text">
-                <string>PushButton</string>
+                <string>Vendas</string>
                </property>
               </widget>
              </item>

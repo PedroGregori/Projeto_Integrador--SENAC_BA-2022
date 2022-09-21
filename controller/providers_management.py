@@ -7,3 +7,8 @@ class Providers_ui(QWidget):
     def __init__(self) :
         super(Providers_ui, self).__init__()
         uic.loadUi(FILE_UI, self)
+        
+        self.table.horizontalHeader().setStretchLastSection(True)
+        self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.table.horizontalHeader().setSectionResizeMode(
+            0, QHeaderView.ResizeToContents)

@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>918</width>
-    <height>605</height>
+    <width>916</width>
+    <height>612</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_11">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QLabel" name="title">
      <property name="font">
@@ -35,10 +35,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <property name="topMargin">
-       <number>5</number>
-      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QLabel" name="label_13">
         <property name="font">
@@ -68,62 +65,77 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_customer">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <layout class="QFormLayout" name="formLayout">
-           <item row="0" column="0">
-            <widget class="QLabel" name="customerLabel">
-             <property name="font">
-              <font>
-               <family>Roboto</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Cliente:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="customer"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QFormLayout" name="layout_customer">
+          <item row="0" column="0">
+           <widget class="QLabel" name="customerLabel">
+            <property name="text">
+             <string>Cliente</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="customer">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Btn_newCustomer">
+          <property name="text">
+           <string>Novo cliente</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_form_of_payment">
+          <layout class="QHBoxLayout" name="frame_formOfPayment">
+           <property name="spacing">
+            <number>7</number>
            </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Preferred</enum>
+           <property name="leftMargin">
+            <number>0</number>
            </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
+           <property name="topMargin">
+            <number>0</number>
            </property>
-          </spacer>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
-            <widget class="QLabel" name="label_14">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Preferred</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>30</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="form_of_payment_Label">
              <property name="font">
               <font>
                <family>Segoe UI Semibold</family>
@@ -138,10 +150,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_2">
+            <widget class="QComboBox" name="form_of_payment">
              <property name="minimumSize">
               <size>
-               <width>100</width>
+               <width>0</width>
                <height>0</height>
               </size>
              </property>
@@ -158,15 +170,15 @@
             </widget>
            </item>
           </layout>
-         </item>
-        </layout>
-       </widget>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="frame_productsData">
+    <widget class="QFrame" name="frame_products">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
      </property>
@@ -175,7 +187,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_9">
       <property name="spacing">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -190,10 +202,16 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frame_addProduct">
+       <widget class="QFrame" name="frame_itemsData">
+        <property name="maximumSize">
+         <size>
+          <width>460</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_10">
          <item>
-          <widget class="QLabel" name="label_9">
+          <widget class="QLabel" name="products_Label">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -248,7 +266,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QFrame" name="frame_10">
+          <widget class="QFrame" name="frame_findProduct">
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
@@ -269,7 +287,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_10">
+             <widget class="QLabel" name="findProduct_Label">
               <property name="maximumSize">
                <size>
                 <width>110</width>
@@ -296,7 +314,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="findProduct">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -355,12 +373,12 @@
              <number>0</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <layout class="QVBoxLayout" name="layout_stockQuantity">
               <property name="spacing">
                <number>11</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_18">
+               <widget class="QLabel" name="stockQuantity_Label">
                 <property name="font">
                  <font>
                   <family>Segoe UI Semibold</family>
@@ -375,7 +393,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_3">
+               <widget class="QLineEdit" name="stockQuantity">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -417,12 +435,12 @@
              </spacer>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
+             <layout class="QVBoxLayout" name="layout_productPrice">
               <property name="spacing">
                <number>11</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_19">
+               <widget class="QLabel" name="productPrice_Label">
                 <property name="font">
                  <font>
                   <family>Segoe UI Semibold</family>
@@ -437,7 +455,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit_4">
+               <widget class="QLineEdit" name="productPrice">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -482,7 +500,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QFrame" name="frame">
+          <widget class="QFrame" name="frame_addProduct">
            <layout class="QVBoxLayout" name="verticalLayout">
             <property name="spacing">
              <number>8</number>
@@ -494,7 +512,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QFrame" name="frame_productQuantify">
+             <widget class="QFrame" name="frame_value_products">
               <layout class="QHBoxLayout" name="horizontalLayout_8">
                <property name="leftMargin">
                 <number>0</number>
@@ -503,12 +521,12 @@
                 <number>0</number>
                </property>
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <layout class="QHBoxLayout" name="layout_productsQuantity">
                  <property name="leftMargin">
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_15">
+                  <widget class="QLabel" name="productsQuantity_Label">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -544,7 +562,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSpinBox" name="spinBox">
+                  <widget class="QSpinBox" name="productsQuantity">
                    <property name="minimumSize">
                     <size>
                      <width>120</width>
@@ -586,9 +604,9 @@
                 </spacer>
                </item>
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <layout class="QHBoxLayout" name="layout_totalValue">
                  <item>
-                  <widget class="QLabel" name="label_16">
+                  <widget class="QLabel" name="totalValue_Label">
                    <property name="font">
                     <font>
                      <family>Segoe UI Semibold</family>
@@ -603,7 +621,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="lineEdit_2">
+                  <widget class="QLineEdit" name="totalValue">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -762,13 +780,40 @@
       </item>
       <item>
        <widget class="Line" name="line">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>2</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>1</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="midLineWidth">
+         <number>0</number>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="table">
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>

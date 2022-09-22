@@ -31,6 +31,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <layout class="QFormLayout" name="formLayout">
+       <property name="bottomMargin">
+        <number>15</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="nameLabel">
          <property name="font">
@@ -287,95 +290,115 @@
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="table_verticaLayout">
-     <item>
-      <widget class="QFrame" name="frame_search">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <property name="leftMargin">
-         <number>4</number>
+    <widget class="QFrame" name="">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <layout class="QVBoxLayout" name="table_verticaLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_search">
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
         </property>
-        <property name="topMargin">
-         <number>4</number>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
-        <property name="rightMargin">
-         <number>4</number>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="table_name">
+           <property name="font">
+            <font>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Tabela de clientes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="search">
+           <property name="placeholderText">
+            <string>Pesquisar por nome de cliente</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="table">
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
         </property>
-        <property name="bottomMargin">
-         <number>4</number>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
         </property>
-        <item>
-         <widget class="QLabel" name="table_name">
-          <property name="font">
-           <font>
-            <family>Roboto</family>
-            <pointsize>13</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Tabela de clientes</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="search">
-          <property name="placeholderText">
-           <string>Pesquisar por nome de cliente</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTableWidget" name="table">
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SingleSelection</enum>
-       </property>
-       <property name="selectionBehavior">
-        <enum>QAbstractItemView::SelectRows</enum>
-       </property>
-       <property name="gridStyle">
-        <enum>Qt::DashLine</enum>
-       </property>
-       <column>
-        <property name="text">
-         <string>ID</string>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Nome</string>
+        <property name="gridStyle">
+         <enum>Qt::DashLine</enum>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>CPF</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Telefone</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Email</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Endereço</string>
-        </property>
-       </column>
-      </widget>
-     </item>
-    </layout>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nome</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>CPF</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Telefone</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Endereço</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
 
         self.pageHome = Home_ui()
         self.pageSale = Sale_ui()
+        self.pageSale.openCustomerWin.connect(
+            lambda: self.stackedWidget.setCurrentIndex(2))
         self.pageCustomer = Customer_ui()
         self.pageEmployees = Employees_ui()
         self.pageProviders = Providers_ui()
@@ -43,7 +45,6 @@ class MainWindow(QMainWindow):
         self.stackedWidget.addWidget(self.pageStock)
         self.stackedWidget.addWidget(self.pageExpenses)
         self.stackedWidget.addWidget(self.pageSales_management)
-        
 
         self.Btn_Home.clicked.connect(self.actionMenu)
         self.Btn_Sale.clicked.connect(self.actionMenu)
@@ -104,7 +105,6 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(6)
         if btnName == "Btn_salesManagement":
             self.stackedWidget.setCurrentIndex(7)
-            
 
     def toggleMenu(self, maxWidth, enable):
         if enable:

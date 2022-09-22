@@ -32,12 +32,13 @@ class CustomerDAO():
         conn.commit()
         conn.close()
 
-    def selectALL():
+    def selectALL(textSearch=''):
         customers_lst = []
         conn = connect()
         cursor = conn.cursor()
-        SQL = "SELECT * FROM customers;"
-        cursor.execute(SQL)
+        SQL = "SELECT * FROM customers WHERE name LIKE ?;"
+        textSearch = '%' + textSearch +'%' 
+        cursor.execute(SQL, [textSearch])
         return_list = cursor.fetchall()
         for c  in return_list:
             newCustomer = Customer(c[0], c[1] ,c[2], c[3], c[4], c[5])

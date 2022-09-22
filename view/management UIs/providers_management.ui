@@ -90,14 +90,14 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="products_quantifyLabel">
+        <widget class="QLabel" name="products_quantityLabel">
          <property name="text">
           <string>Quantidade de produtos</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QSpinBox" name="products_quantify">
+        <widget class="QSpinBox" name="products_quantity">
          <property name="buttonSymbols">
           <enum>QAbstractSpinBox::PlusMinus</enum>
          </property>
@@ -124,7 +124,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="Btn_add">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -142,7 +142,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="Btn_edit">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -160,7 +160,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="Btn_delete">
          <property name="minimumSize">
           <size>
            <width>0</width>

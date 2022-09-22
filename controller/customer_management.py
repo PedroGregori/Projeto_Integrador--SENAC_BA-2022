@@ -4,7 +4,7 @@ from controller.history_window import history_window
 from model.customer import Customer
 from model.customerDAO import CustomerDAO
 
-FILE_UI = 'view/customers_management.ui'
+FILE_UI = 'view/management UIs/customers_management.ui'
 
 
 class Customer_ui(QWidget):
@@ -25,10 +25,13 @@ class Customer_ui(QWidget):
 
         self.table.cellClicked.connect(self.updateUiCellClick)
 
-        self.loadaddress()
+        self.loadData()
 
-    def loadaddress(self):
-        items_lst = CustomerDAO.selectALL()
+        self.search.textEdited.connect(self.loadData)
+
+    def loadData(self, text=''):
+        self.table.setRowCount(0)
+        items_lst = CustomerDAO.selectALL(text)
         for c in items_lst:
             self.addTableItem(c)
 
@@ -72,19 +75,16 @@ class Customer_ui(QWidget):
         email = self.email.text()
         address = self.address.text()
 
-        confirm = self.confirm_dialog("Tem certeza que deseja adicionar?")
-        if confirm == 'yes':
+        if name == "" or cpf == "" or phone == "" or address == "":
+            print("Preencha os dados pedidos")
 
-            if name == "" or cpf == "" or phone == "" or address == "":
-                print("Preencha os dados pedidos")
+        else:
+            newItem = Customer(-1, name, cpf, phone, email, address)
+            id = CustomerDAO.add(newItem)
+            newItem.id = id
 
-            else:
-                newItem = Customer(-1, name, cpf, phone, email, address)
-                id = CustomerDAO.add(newItem)
-                newItem.id = id
-
-                self.addTableItem(newItem)
-                self.clearFields()
+            self.addTableItem(newItem)
+            self.clearFields()
 
     def edit(self):
         lineSel = self.table.currentRow()

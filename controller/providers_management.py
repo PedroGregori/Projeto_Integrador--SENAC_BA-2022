@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView
 from PyQt5 import uic
 
-FILE_UI = "view/providers_management.ui"
+FILE_UI = "view/management UIs/providers_management.ui"
 
 class Providers_ui(QWidget):
     def __init__(self) :

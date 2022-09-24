@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>930</width>
-    <height>603</height>
+    <width>901</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="font">
@@ -18,7 +18,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QLabel" name="title">
      <property name="font">
@@ -30,7 +30,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Gerenciamento de Funcionários</string>
+      <string>Gerenciamento de Usuários</string>
      </property>
     </widget>
    </item>
@@ -45,7 +45,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>18</height>
+       <height>10</height>
       </size>
      </property>
     </spacer>
@@ -53,12 +53,12 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="data_tittles">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="employeeData_label">
          <property name="font">
           <font>
-           <family>Segoe UI Semilight</family>
+           <family>Open Sans SemiBold</family>
            <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -89,10 +89,10 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="userData_label">
          <property name="font">
           <font>
-           <family>Segoe UI Semilight</family>
+           <family>Open Sans SemiBold</family>
            <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -109,9 +109,9 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="input_data">
        <item>
-        <widget class="QFrame" name="formFrame">
+        <widget class="QFrame" name="employee_data">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -134,7 +134,11 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="cpf"/>
+           <widget class="QLineEdit" name="cpf">
+            <property name="maxLength">
+             <number>11</number>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="rgLabel">
@@ -144,7 +148,20 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="rg"/>
+           <widget class="QLineEdit" name="rg">
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="maxLength">
+             <number>9</number>
+            </property>
+            <property name="cursorPosition">
+             <number>0</number>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="addressLabel">
@@ -164,7 +181,23 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="salary"/>
+           <widget class="QDoubleSpinBox" name="salary">
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::PlusMinus</enum>
+            </property>
+            <property name="specialValueText">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string>R$ </string>
+            </property>
+            <property name="maximum">
+             <double>100000000000000005366162204393472.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.000000000000000</double>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -179,14 +212,14 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>13</width>
+           <width>6</width>
            <height>20</height>
           </size>
          </property>
         </spacer>
        </item>
        <item>
-        <widget class="QFrame" name="formFrame_2">
+        <widget class="QFrame" name="user_data">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -214,7 +247,7 @@
           <item row="2" column="0">
            <widget class="QLabel" name="emailLabel">
             <property name="text">
-             <string>email</string>
+             <string>Email</string>
             </property>
            </widget>
           </item>
@@ -229,10 +262,23 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="phone"/>
+           <widget class="QLineEdit" name="phone">
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="maxLength">
+             <number>11</number>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Normal</enum>
+            </property>
+            <property name="cursorPosition">
+             <number>0</number>
+            </property>
+           </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="userType">
             <item>
              <property name="text">
               <string>Funcionario</string>
@@ -248,7 +294,7 @@
           <item row="4" column="0">
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Cargo:</string>
+             <string>Cargo</string>
             </property>
            </widget>
           </item>
@@ -260,7 +306,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="frame_buttons">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="leftMargin">
        <number>0</number>
@@ -288,7 +334,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Btn_add">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -301,7 +347,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="Btn_edit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -314,7 +360,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="Btn_delete">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -330,52 +376,130 @@
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="table">
-     <column>
-      <property name="text">
-       <string>id</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>nome</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>cpf</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>rg</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>endereço</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>usuario</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>senha</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>email</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>telefone</string>
-      </property>
-     </column>
+    <widget class="QFrame" name="frame_table">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QFrame" name="frame_search">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="table_name">
+           <property name="font">
+            <font>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Tabela de Usuários</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="search">
+           <property name="placeholderText">
+            <string>Pesquisar por nome do funcionário</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="table">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="tabKeyNavigation">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::DashLine</enum>
+        </property>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nome</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>CPF</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>RG</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Endereço</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Salário</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Usuário</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Senha</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Telefone</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Tipo de usuário</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

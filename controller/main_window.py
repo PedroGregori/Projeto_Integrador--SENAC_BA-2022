@@ -8,9 +8,8 @@ from PyQt5.QtWidgets import QMainWindow, QStatusBar
 from controller.home import Home_ui
 from controller.sale import Sale_ui
 from controller.customer_management import Customer_ui
-from controller.employees_management import Employees_ui
+from controller.users_management import Users_ui
 from controller.providers_management import Providers_ui
-from controller.stock_management import Stock_ui
 from controller.expenses_management import Expenses_ui
 from controller.sales_management import SalesManagement_ui
 
@@ -31,18 +30,16 @@ class MainWindow(QMainWindow):
         self.pageSale.openCustomerWin.connect(
             lambda: self.stackedWidget.setCurrentIndex(2))
         self.pageCustomer = Customer_ui()
-        self.pageEmployees = Employees_ui()
+        self.pageUsers = Users_ui()
         self.pageProviders = Providers_ui()
-        self.pageStock = Stock_ui()
         self.pageSales_management = SalesManagement_ui()
         self.pageExpenses = Expenses_ui()
 
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageSale)
         self.stackedWidget.addWidget(self.pageCustomer)
-        self.stackedWidget.addWidget(self.pageEmployees)
+        self.stackedWidget.addWidget(self.pageUsers)
         self.stackedWidget.addWidget(self.pageProviders)
-        self.stackedWidget.addWidget(self.pageStock)
         self.stackedWidget.addWidget(self.pageExpenses)
         self.stackedWidget.addWidget(self.pageSales_management)
 
@@ -51,12 +48,11 @@ class MainWindow(QMainWindow):
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
         self.Btn_employees.clicked.connect(self.actionMenu)
         self.Btn_providers.clicked.connect(self.actionMenu)
-        self.Btn_stock.clicked.connect(self.actionMenu)
         self.Btn_expenses.clicked.connect(self.actionMenu)
         self.Btn_salesManagement.clicked.connect(self.actionMenu)
 
         self.Btn_Toggle.clicked.connect(
-            lambda: self.toggleMenu(150, True))
+            lambda: self.toggleMenu(170, True))
         self.Btn_Management.clicked.connect(
             lambda: self.managementMenu(141, True))
 
@@ -69,20 +65,8 @@ class MainWindow(QMainWindow):
         self.timer.start()
 
     def recurring_timer(self):
-
         now = QDate.currentDate()
-
-        # print(now.toString(Qt.ISODate))
-        # print(now.toString(Qt.DefaultLocaleLongDate))
-
-        datetime = QDateTime.currentDateTime()
-
-        # print(datetime.toString())
-
         time = QTime.currentTime()
-
-        # print(time.toString(Qt.DefaultLocaleLongDate))
-
         self.statusBar.showMessage(
             f'{now.toString(Qt.DefaultLocaleLongDate)} - {time.toString()} ')
 
@@ -99,27 +83,22 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(3)
         if btnName == "Btn_providers":
             self.stackedWidget.setCurrentIndex(4)
-        if btnName == "Btn_stock":
-            self.stackedWidget.setCurrentIndex(5)
         if btnName == "Btn_expenses":
-            self.stackedWidget.setCurrentIndex(6)
+            self.stackedWidget.setCurrentIndex(5)
         if btnName == "Btn_salesManagement":
-            self.stackedWidget.setCurrentIndex(7)
+            self.stackedWidget.setCurrentIndex(6)
 
     def toggleMenu(self, maxWidth, enable):
         if enable:
-            # GET WIDTH
             width = self.frame_dashboard.width()
             maxExtend = maxWidth
             standard = 0
 
-            # SET MAX WIDTH
         if width == 0:
             widthExtended = maxExtend
         else:
             widthExtended = standard
 
-            # ANIMATION
         self.animation = QPropertyAnimation(
             self.frame_dashboard, b"minimumWidth")
         self.animation.setDuration(400)
@@ -135,23 +114,3 @@ class MainWindow(QMainWindow):
             self.frame_management.setFixedHeight(maxHeight)
 
         self.managementMenuEnable = not self.managementMenuEnable
-
-        """if enable:
-            # GET WIDTH
-            height = self.frame_management.height()
-            maxExtend = maxHeight
-            standard = 0
-
-            # SET MAX WIDTH
-        if height == 0:
-            heightExtended = maxExtend
-        else:
-            heightExtended = standard
-        
-        self.animation = QPropertyAnimation(
-            self.frame_management, b"minimumHeight")
-        self.animation.setDuration(400)
-        self.animation.setStartValue(height)
-        self.animation.setEndValue(heightExtended)
-        self.animation.setEasingCurve(QEasingCurve.Type.Linear)
-        self.animation.start()"""

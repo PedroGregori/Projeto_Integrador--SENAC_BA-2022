@@ -1,7 +1,7 @@
 from .db import connect
 from .customer import Customer
 
-class CustomerDAO():
+class Customer_DAO():
     def add(c: Customer):
         conn = connect()
         cursor = conn.cursor()

@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView, QMessageBox
 from PyQt5 import uic
 from controller.history_window import history_window
 from model.customer import Customer
-from model.customerDAO import CustomerDAO
+from model.customerDAO import Customer_DAO
 
 FILE_UI = 'view/management UIs/customers_management.ui'
 
@@ -31,7 +31,7 @@ class Customer_ui(QWidget):
 
     def loadData(self, text=''):
         self.table.setRowCount(0)
-        items_lst = CustomerDAO.selectALL(text)
+        items_lst = Customer_DAO.selectALL(text)
         for c in items_lst:
             self.addTableItem(c)
 
@@ -80,7 +80,7 @@ class Customer_ui(QWidget):
 
         else:
             newItem = Customer(-1, name, cpf, phone, email, address)
-            id = CustomerDAO.add(newItem)
+            id = Customer_DAO.add(newItem)
             newItem.id = id
 
             self.addTableItem(newItem)
@@ -105,7 +105,7 @@ class Customer_ui(QWidget):
             else:
                 newItem = Customer(id, name, cpf, phone, email, address)
                 self.updateTable(newItem)
-                CustomerDAO.edit(newItem)
+                Customer_DAO.edit(newItem)
 
                 self.clearFields()
 
@@ -117,7 +117,7 @@ class Customer_ui(QWidget):
             "Tem certeza que deseja excluir? ESTA AÇÃO É IRREVERSÍVEL!")
         if confirm == 'yes':
             self.table.removeRow(lineSel)
-            CustomerDAO.delete(int(id))
+            Customer_DAO.delete(int(id))
 
             self.clearFields()
 

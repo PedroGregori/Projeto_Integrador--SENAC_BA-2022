@@ -318,7 +318,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -341,7 +341,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="maximumSize">
@@ -377,7 +377,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -403,7 +403,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -446,7 +446,7 @@ QPushButton{
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>148</height>
+              <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -479,7 +479,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -497,7 +497,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -515,7 +515,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">
@@ -533,7 +533,7 @@ QPushButton{
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>32</height>
+                 <height>26</height>
                 </size>
                </property>
                <property name="font">

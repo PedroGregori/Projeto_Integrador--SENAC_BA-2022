@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(170, True))
         self.Btn_Management.clicked.connect(
-            lambda: self.managementMenu(141, True))
+            lambda: self.managementMenu(124, True))
 
         self.statusBar = QStatusBar()
         self.setStatusBar(self.statusBar)

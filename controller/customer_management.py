@@ -68,6 +68,14 @@ class Customer_ui(QWidget):
         self.email.setText(self.table.item(lineSel, 4).text())
         self.address.setText(self.table.item(lineSel, 5).text())
 
+    def emptyFieldsAlert(self):
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Aviso")
+        dlg.setText('Preencha o resto dos campos!')
+        dlg.setStandardButtons(QMessageBox.Ok)
+        dlg.setIcon(QMessageBox.Warning)
+        dlg.exec()
+
     def add(self):
         name = self.name.text()
         cpf = self.cpf.text()
@@ -76,7 +84,7 @@ class Customer_ui(QWidget):
         address = self.address.text()
 
         if name == "" or cpf == "" or phone == "" or address == "":
-            print("Preencha os dados pedidos")
+            self.emptyFieldsAlert()
 
         else:
             newItem = Customer(-1, name, cpf, phone, email, address)
@@ -96,18 +104,15 @@ class Customer_ui(QWidget):
         email = self.email.text()
         address = self.address.text()
 
-        confirm = self.confirm_dialog("Tem certeza que deseja editar?")
-        if confirm == 'yes':
+        if name == "" or cpf == "" or phone == "" or address == "":
+            self.emptyFieldsAlert()
 
-            if name == "" or cpf == "" or phone == "" or address == "":
-                print("Preencha os dados pedidos")
+        else:
+            newItem = Customer(id, name, cpf, phone, email, address)
+            self.updateTable(newItem)
+            Customer_DAO.edit(newItem)
 
-            else:
-                newItem = Customer(id, name, cpf, phone, email, address)
-                self.updateTable(newItem)
-                Customer_DAO.edit(newItem)
-
-                self.clearFields()
+            self.clearFields()
 
     def delete(self):
         lineSel = self.table.currentRow()
@@ -119,7 +124,7 @@ class Customer_ui(QWidget):
             self.table.removeRow(lineSel)
             Customer_DAO.delete(int(id))
 
-            self.clearFields()
+        self.clearFields()
 
     def addTableItem(self, c: Customer):
         line = self.table.rowCount()

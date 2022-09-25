@@ -124,7 +124,11 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="name"/>
+           <widget class="QLineEdit" name="name">
+            <property name="placeholderText">
+             <string>Digite o nome completo</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="cpfLabel">
@@ -137,6 +141,9 @@
            <widget class="QLineEdit" name="cpf">
             <property name="maxLength">
              <number>11</number>
+            </property>
+            <property name="placeholderText">
+             <string>Digite o CPF</string>
             </property>
            </widget>
           </item>
@@ -161,6 +168,9 @@
             <property name="cursorPosition">
              <number>0</number>
             </property>
+            <property name="placeholderText">
+             <string>Digite o RG</string>
+            </property>
            </widget>
           </item>
           <item row="3" column="0">
@@ -171,7 +181,11 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="address"/>
+           <widget class="QLineEdit" name="address">
+            <property name="placeholderText">
+             <string>Digite o Endereço</string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="salaryLabel">
@@ -182,6 +196,12 @@
           </item>
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="salary">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>22</height>
+             </size>
+            </property>
             <property name="buttonSymbols">
              <enum>QAbstractSpinBox::PlusMinus</enum>
             </property>
@@ -232,7 +252,11 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="user"/>
+           <widget class="QLineEdit" name="user">
+            <property name="placeholderText">
+             <string>Digite Defina o nome de usuário</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="passwordLabel">
@@ -242,7 +266,11 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="password"/>
+           <widget class="QLineEdit" name="password">
+            <property name="placeholderText">
+             <string>Defina a Senha</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="emailLabel">
@@ -252,7 +280,11 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="email"/>
+           <widget class="QLineEdit" name="email">
+            <property name="placeholderText">
+             <string>Digite o Email</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="phoneLabel">
@@ -274,6 +306,9 @@
             </property>
             <property name="cursorPosition">
              <number>0</number>
+            </property>
+            <property name="placeholderText">
+             <string>Digite o telefone</string>
             </property>
            </widget>
           </item>

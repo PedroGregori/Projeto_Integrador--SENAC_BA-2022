@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView, QMessageBox
 from PyQt5 import uic
-from PyQt5.QtCore import *
 from model.userDAO import User_DAO
 from model.user import User
 

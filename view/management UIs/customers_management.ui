@@ -14,6 +14,18 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item>
     <widget class="QLabel" name="title">
      <property name="font">
@@ -38,157 +50,158 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>13</height>
+       <height>10</height>
       </size>
      </property>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <family>Open Sans SemiBold</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Dados do cliente</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QFrame" name="">
+      <widget class="QFrame" name="frame">
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
-       <layout class="QFormLayout" name="formLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>6</number>
+        </property>
         <property name="leftMargin">
-         <number>9</number>
+         <number>6</number>
         </property>
         <property name="topMargin">
-         <number>9</number>
+         <number>2</number>
         </property>
-        <property name="rightMargin">
-         <number>9</number>
-        </property>
-        <property name="bottomMargin">
-         <number>9</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="nameLabel">
+        <item>
+         <widget class="QLabel" name="label">
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>Open Sans SemiBold</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="text">
-           <string>Nome</string>
+           <string>Dados do cliente</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="name">
-          <property name="placeholderText">
-           <string>Digite o nome completo do cliente</string>
-          </property>
-         </widget>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="nameLabel">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Nome</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="name">
+            <property name="placeholderText">
+             <string>Digite o nome completo do cliente</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="CPFLabel">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>CPF</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="cpf">
+            <property name="maxLength">
+             <number>11</number>
+            </property>
+            <property name="placeholderText">
+             <string>Insira o CPF</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="telefoneLabel">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Telefone</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="phone">
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="maxLength">
+             <number>11</number>
+            </property>
+            <property name="placeholderText">
+             <string>Digite o telefone</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="emailLabel">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Email</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="email">
+            <property name="placeholderText">
+             <string>Digite o email</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="addressLabel">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Endereço</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="address">
+            <property name="placeholderText">
+             <string>Digite o  endereço</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="CPFLabel">
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>CPF</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="cpf">
-          <property name="maxLength">
-           <number>11</number>
-          </property>
-          <property name="placeholderText">
-           <string>Insira o CPF</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="telefoneLabel">
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Telefone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="phone">
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="maxLength">
-           <number>11</number>
-          </property>
-          <property name="placeholderText">
-           <string>Digite o telefone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="emailLabel">
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Email</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="email">
-          <property name="placeholderText">
-           <string>Digite o email</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="addressLabel">
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Endereço</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLineEdit" name="address">
-          <property name="placeholderText">
-           <string>Digite o  endereço</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPushButton" name="Btn_Add">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>78</width>
               <height>27</height>
              </size>
             </property>
@@ -206,7 +219,7 @@
            <widget class="QPushButton" name="Btn_Edit">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>113</width>
               <height>27</height>
              </size>
             </property>
@@ -224,7 +237,7 @@
            <widget class="QPushButton" name="Btn_Delete">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>78</width>
               <height>27</height>
              </size>
             </property>
@@ -289,6 +302,9 @@
            <property name="spacing">
             <number>10</number>
            </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
            <property name="topMargin">
             <number>0</number>
            </property>
@@ -342,6 +358,9 @@
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <property name="spacing">
             <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
            </property>
            <property name="topMargin">
             <number>0</number>
@@ -425,16 +444,16 @@
      </property>
      <layout class="QVBoxLayout" name="table_verticaLayout">
       <property name="leftMargin">
-       <number>9</number>
+       <number>6</number>
       </property>
       <property name="topMargin">
-       <number>9</number>
+       <number>6</number>
       </property>
       <property name="rightMargin">
-       <number>9</number>
+       <number>6</number>
       </property>
       <property name="bottomMargin">
-       <number>9</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QFrame" name="frame_search">
@@ -467,6 +486,12 @@
            </property>
            <property name="text">
             <string>Tabela de clientes</string>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <property name="indent">
+            <number>-1</number>
            </property>
           </widget>
          </item>

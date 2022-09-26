@@ -76,6 +76,7 @@ class Users_ui(QWidget):
         index = self.userType.findText(text)
         if index >= 0:
             self.userType.setCurrentIndex(index)
+    
     def emptyFieldsAlert(self):
         dlg = QMessageBox(self)
         dlg.setWindowTitle("Aviso")

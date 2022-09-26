@@ -97,7 +97,10 @@ class Customer_ui(QWidget):
     def edit(self):
         lineSel = self.table.currentRow()
         lineItem = self.table.item(lineSel, 0)
-        id = lineItem.text()
+        if lineItem == None:
+            print('nenhum selecioando')
+        else:
+            id = lineItem.text()
         name = self.name.text()
         cpf = self.cpf.text()
         phone = self.phone.text()

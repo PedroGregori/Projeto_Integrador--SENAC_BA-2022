@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         self.Btn_Home.clicked.connect(self.actionMenu)
         self.Btn_Sale.clicked.connect(self.actionMenu)
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
-        self.Btn_employees.clicked.connect(self.actionMenu)
+        self.Btn_users.clicked.connect(self.actionMenu)
         self.Btn_providers.clicked.connect(self.actionMenu)
         self.Btn_expenses.clicked.connect(self.actionMenu)
         self.Btn_salesManagement.clicked.connect(self.actionMenu)
@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(1)
         if btnName == "Btn_CustomerReg":
             self.stackedWidget.setCurrentIndex(2)
-        if btnName == "Btn_employees":
+        if btnName == "Btn_users":
             self.stackedWidget.setCurrentIndex(3)
         if btnName == "Btn_providers":
             self.stackedWidget.setCurrentIndex(4)

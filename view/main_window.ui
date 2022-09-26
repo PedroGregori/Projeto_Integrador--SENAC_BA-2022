@@ -21,7 +21,18 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QPushButton{
+	background-color: rgb(223, 223, 223);
+}
+
+QPushButton:hover{
+	background-color: rgb(231, 231, 231);
+}
+
+QPushButton:pressed{
+	background-color: rgb(231, 231, 231);
+	border: 1px solid rgb(153, 208, 255);
+}</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
@@ -125,7 +136,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="leftMargin">
            <number>2</number>
@@ -157,7 +168,7 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>../assets/icons/account_circle_FILL0_wght400_GRAD0_opsz48.png</pixmap>
+             <pixmap>../assets/icons/account_circle_FILL1_wght400_GRAD0_opsz48.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -176,6 +187,9 @@
              <enum>QFrame::NoFrame</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>1</number>
+             </property>
              <property name="leftMargin">
               <number>0</number>
              </property>
@@ -190,6 +204,18 @@
              </property>
              <item>
               <widget class="QLabel" name="label_11">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>120</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <family>Open Sans SemiBold</family>
@@ -208,6 +234,12 @@
              </item>
              <item>
               <widget class="QLabel" name="label_12">
+               <property name="maximumSize">
+                <size>
+                 <width>120</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <family>Open Sans SemiBold</family>
@@ -458,7 +490,7 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="Btn_employees">
+              <widget class="QPushButton" name="Btn_users">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -472,6 +504,11 @@
                </property>
                <property name="text">
                 <string>Usuários</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normalon>../assets/icons/group_FILL1_wght400_GRAD0_opsz48.png</normalon>
+                </iconset>
                </property>
               </widget>
              </item>

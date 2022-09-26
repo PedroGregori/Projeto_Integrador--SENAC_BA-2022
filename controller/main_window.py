@@ -6,7 +6,7 @@ from PyQt5.QtCore import QDate, QTime, QDateTime, Qt, QTimer
 from PyQt5.QtWidgets import QMainWindow, QStatusBar
 
 from controller.home import Home_ui
-from controller.sale import Sale_ui
+from controller.sell import Sell_ui
 from controller.customer_management import Customer_ui
 from controller.users_management import Users_ui
 from controller.providers_management import Providers_ui
@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         uic.loadUi(FILE_UI, self)
 
         self.pageHome = Home_ui()
-        self.pageSale = Sale_ui()
+        self.pageSale = Sell_ui()
         self.pageSale.openCustomerWin.connect(
             lambda: self.stackedWidget.setCurrentIndex(2))
         self.pageCustomer = Customer_ui()

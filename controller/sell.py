@@ -3,15 +3,15 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5 import uic
 
 
-FILE_UI = 'view/sale.ui'
+FILE_UI = 'view/sell.ui'
 
 
-class Sale_ui(QWidget):
+class Sell_ui(QWidget):
     
     openCustomerWin = pyqtSignal()
     
     def __init__(self):
-        super(Sale_ui, self).__init__()
+        super(Sell_ui, self).__init__()
         uic.loadUi(FILE_UI, self)
         
         self.table.horizontalHeader().setStretchLastSection(True)

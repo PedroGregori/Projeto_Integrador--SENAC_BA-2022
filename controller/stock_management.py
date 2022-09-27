@@ -1,13 +1,13 @@
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView
 from PyQt5 import uic
-from model.provider import Provider
-from model.providerDAO import Provider_DAO
+from model.stock import Stock
+from model.stockDAO import Stock_DAO
 
-FILE_UI = "view/management UIs/providers_management.ui"
+FILE_UI = "view/management UIs/stock_management.ui"
 
-class Providers_ui(QWidget):
+class Stock_ui(QWidget):
     def __init__(self) :
-        super(Providers_ui, self).__init__()
+        super(Stock_ui, self).__init__()
         uic.loadUi(FILE_UI, self)
         
         self.table.horizontalHeader().setStretchLastSection(True)
@@ -36,8 +36,8 @@ class Providers_ui(QWidget):
     def openHistory(self):
         pass
     
-    def addTableItem(self, p: Provider):
+    def addTableItem(self, s: Stock):
         pass
     
-    def updateTable(self, p: Provider):
+    def updateTable(self, s: Stock):
         pass

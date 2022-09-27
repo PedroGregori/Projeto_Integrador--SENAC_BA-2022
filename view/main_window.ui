@@ -513,7 +513,7 @@ QPushButton:pressed{
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="Btn_providers">
+              <widget class="QPushButton" name="Btn_stock">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -526,7 +526,7 @@ QPushButton:pressed{
                 </font>
                </property>
                <property name="text">
-                <string>Fornecedores</string>
+                <string>Estoque</string>
                </property>
               </widget>
              </item>

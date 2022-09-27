@@ -9,7 +9,7 @@ from controller.home import Home_ui
 from controller.sell import Sell_ui
 from controller.customer_management import Customer_ui
 from controller.users_management import Users_ui
-from controller.providers_management import Providers_ui
+from controller.stock_management import Stock_ui
 from controller.expenses_management import Expenses_ui
 from controller.sales_management import SalesManagement_ui
 
@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
             lambda: self.stackedWidget.setCurrentIndex(2))
         self.pageCustomer = Customer_ui()
         self.pageUsers = Users_ui()
-        self.pageProviders = Providers_ui()
+        self.pageStock = Stock_ui()
         self.pageSales_management = SalesManagement_ui()
         self.pageExpenses = Expenses_ui()
 
@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         self.stackedWidget.addWidget(self.pageSale)
         self.stackedWidget.addWidget(self.pageCustomer)
         self.stackedWidget.addWidget(self.pageUsers)
-        self.stackedWidget.addWidget(self.pageProviders)
+        self.stackedWidget.addWidget(self.pageStock)
         self.stackedWidget.addWidget(self.pageExpenses)
         self.stackedWidget.addWidget(self.pageSales_management)
 
@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
         self.Btn_Sale.clicked.connect(self.actionMenu)
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
         self.Btn_users.clicked.connect(self.actionMenu)
-        self.Btn_providers.clicked.connect(self.actionMenu)
+        self.Btn_stock.clicked.connect(self.actionMenu)
         self.Btn_expenses.clicked.connect(self.actionMenu)
         self.Btn_salesManagement.clicked.connect(self.actionMenu)
 
@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(2)
         if btnName == "Btn_users":
             self.stackedWidget.setCurrentIndex(3)
-        if btnName == "Btn_providers":
+        if btnName == "Btn_stock":
             self.stackedWidget.setCurrentIndex(4)
         if btnName == "Btn_expenses":
             self.stackedWidget.setCurrentIndex(5)

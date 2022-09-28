@@ -469,7 +469,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Data da ultima compra</string>
+       <string>Ultima compra</string>
       </property>
      </column>
      <column>

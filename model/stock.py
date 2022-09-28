@@ -3,6 +3,6 @@ class Stock():
         self.id = id
         self.provider = provider
         self.product = product
-        self.productCost = purchaseCost
-        self.quantity = stock_quantity
+        self.purchaseCost = purchaseCost
+        self.stock_quantity = stock_quantity
         self.salePrice = salePrice

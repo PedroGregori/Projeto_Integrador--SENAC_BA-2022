@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView
 from PyQt5 import uic
 
-FILE_UI = 'view/history_window.ui'
+FILE_UI = 'view/customer_history.ui'
 
-class history_window(QWidget):
+class customer_history(QWidget):
     def __init__(self):
-        super(history_window, self).__init__()
+        super(customer_history, self).__init__()
         uic.loadUi(FILE_UI, self)
         
         self.table.horizontalHeader().setStretchLastSection(True)

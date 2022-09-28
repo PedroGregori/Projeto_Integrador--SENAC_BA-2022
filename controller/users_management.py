@@ -37,6 +37,7 @@ class Users_ui(QWidget):
         self.cpf.clear()
         self.rg.clear()
         self.address.clear()
+        self.salary.setValue(0.00)
         self.user.clear()
         self.password.clear()
         self.email.clear()

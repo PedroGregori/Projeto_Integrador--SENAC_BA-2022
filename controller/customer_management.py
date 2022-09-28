@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView, QMessageBox
 from PyQt5 import uic
-from controller.history_window import history_window
+from controller.customer_history import customer_history
 from model.customer import Customer
 from model.customerDAO import Customer_DAO
 
@@ -56,7 +56,7 @@ class Customer_ui(QWidget):
             return 'no'
 
     def openHistory(self):
-        self.winHistory = history_window()
+        self.winHistory = customer_history()
         self.winHistory.show()
 
     def updateUiCellClick(self):

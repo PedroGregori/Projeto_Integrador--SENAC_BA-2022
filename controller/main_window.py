@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtCore import QPropertyAnimation, QEasingCurve
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
-from PyQt5.QtCore import QDate, QTime, QDateTime, Qt, QTimer
+from PyQt5.QtCore import QDate, QTime, Qt, QTimer
 from PyQt5.QtWidgets import QMainWindow, QStatusBar
 
 from controller.home import Home_ui

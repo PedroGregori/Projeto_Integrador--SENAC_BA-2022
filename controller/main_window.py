@@ -1,9 +1,6 @@
-import sys
-from PyQt5.QtCore import QPropertyAnimation, QEasingCurve
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5 import uic
-from PyQt5.QtCore import QDate, QTime, Qt, QTimer
+from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QDate, QTime, Qt, QTimer
 from PyQt5.QtWidgets import QMainWindow, QStatusBar
+from PyQt5 import uic
 
 from controller.home import Home_ui
 from controller.sell import Sell_ui
@@ -12,7 +9,9 @@ from controller.users_management import Users_ui
 from controller.stock_management import Stock_ui
 from controller.expenses_management import Expenses_ui
 from controller.sales_management import SalesManagement_ui
-
+#from controller.login import Login_ui
+from model.userDAO import User_DAO
+from model.user import User
 
 FILE_UI = 'view/main_window.ui'
 
@@ -24,7 +23,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         uic.loadUi(FILE_UI, self)
-
+        
+        #self.Login_ui = Login_ui(self)
         self.pageHome = Home_ui()
         self.pageSale = Sell_ui()
         self.pageSale.openCustomerWin.connect(
@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
         self.Btn_expenses.clicked.connect(self.actionMenu)
         self.Btn_salesManagement.clicked.connect(self.actionMenu)
 
+
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(170, True))
         self.Btn_Management.clicked.connect(
@@ -69,6 +70,16 @@ class MainWindow(QMainWindow):
         time = QTime.currentTime()
         self.statusBar.showMessage(
             f'{now.toString(Qt.DefaultLocaleLongDate)} - {time.toString()} ')
+        
+    """def compareUser(self, user):
+        userType = []
+        for u in user:
+            userInfo = User(u.id, u.name, u.cpf, u.rg, u.address, u.salary,
+                            u.user, u.password, u.email, u.phone, u.userType)
+            userType.append(userInfo.userType)
+        print(userType)
+        if "Funcionario" in userType:
+            self.Btn_management.setEnabled(False)"""
 
     def actionMenu(self):
         btn = self.sender()

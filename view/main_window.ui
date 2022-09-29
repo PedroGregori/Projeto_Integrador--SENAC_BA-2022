@@ -528,6 +528,10 @@ QPushButton:pressed{
                <property name="text">
                 <string>Estoque</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/icons/28579885-d3c3e8b6-7155-11e7-80a6-a0218b054199.png</normaloff>../assets/icons/28579885-d3c3e8b6-7155-11e7-80a6-a0218b054199.png</iconset>
+               </property>
               </widget>
              </item>
              <item>

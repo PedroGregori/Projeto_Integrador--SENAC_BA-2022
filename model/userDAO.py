@@ -1,6 +1,6 @@
 from .db import connect
 from .user import User
-
+from .LoginData import Login_Data
 
 class User_DAO():
     def add(u: User):
@@ -51,3 +51,20 @@ class User_DAO():
         conn.close()
 
         return users_lst
+    
+    def compareUser(user: Login_Data):
+        user_lst = []
+        conn = connect()
+        cursor = conn.cursor()
+        SQL = "SELECT * FROM users WHERE (user=? OR email=? OR phone=?) AND password=?"
+        data = [user.login, user.login, user.login, user.password]
+        cursor.execute(SQL, data)
+        return_lst = cursor.fetchall()
+        for u in return_lst:
+            return_user = User(u[0], u[1], u[2], u[3], u[4], u[5],
+                           u[6], u[7], u[8], u[9], u[10])
+            user_lst.append(return_user)
+        
+        conn.close()
+        
+        return user_lst

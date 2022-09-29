@@ -20,3 +20,6 @@ class Sell_ui(QWidget):
             0, QHeaderView.ResizeToContents)
         
         self.Btn_newCustomer.clicked.connect(lambda: self.openCustomerWin.emit())
+        
+        
+    

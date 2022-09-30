@@ -359,6 +359,30 @@
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QPushButton" name="Btn_select">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>106</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Selecionar</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </item>
               <item>
@@ -652,7 +676,7 @@
                       <enum>QAbstractSpinBox::PlusMinus</enum>
                      </property>
                      <property name="maximum">
-                      <number>999</number>
+                      <number>10000000</number>
                      </property>
                     </widget>
                    </item>
@@ -705,7 +729,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                     <widget class="QDoubleSpinBox" name="itemsValue">
                       <property name="minimumSize">
                        <size>
                         <width>99</width>
@@ -725,6 +749,9 @@
                       </property>
                       <property name="prefix">
                        <string>R$ </string>
+                      </property>
+                      <property name="maximum">
+                       <double>1000000.000000000000000</double>
                       </property>
                      </widget>
                     </item>
@@ -750,7 +777,7 @@
                   <number>4</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="pushButton_5">
+                  <widget class="QPushButton" name="Btn_cancelInsert">
                    <property name="minimumSize">
                     <size>
                      <width>78</width>
@@ -785,7 +812,7 @@
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="Btn_remove">
                    <property name="minimumSize">
                     <size>
                      <width>78</width>
@@ -804,7 +831,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="Btn_add">
                    <property name="minimumSize">
                     <size>
                      <width>78</width>
@@ -943,6 +970,9 @@
                      <property name="prefix">
                       <string>R$ </string>
                      </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -971,7 +1001,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+                    <widget class="QDoubleSpinBox" name="totalValue">
                      <property name="minimumSize">
                       <size>
                        <width>109</width>
@@ -986,6 +1016,9 @@
                      </property>
                      <property name="prefix">
                       <string>R$ </string>
+                     </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
                      </property>
                     </widget>
                    </item>
@@ -1082,6 +1115,9 @@
                      <property name="prefix">
                       <string>R$ </string>
                      </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -1136,6 +1172,9 @@
                      </property>
                      <property name="prefix">
                       <string>R$ </string>
+                     </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
                      </property>
                     </widget>
                    </item>
@@ -1331,11 +1370,6 @@
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <column>
-           <property name="text">
-            <string>ID</string>
-           </property>
-          </column>
           <column>
            <property name="text">
             <string>Item</string>

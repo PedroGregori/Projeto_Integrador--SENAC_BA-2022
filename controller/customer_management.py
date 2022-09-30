@@ -20,8 +20,9 @@ class Customer_ui(QWidget):
         self.Btn_Add.clicked.connect(self.add)
         self.Btn_Edit.clicked.connect(self.edit)
         self.Btn_Delete.clicked.connect(self.delete)
-        self.Btn_History.clicked.connect(self.openHistory)
+        #self.Btn_History.clicked.connect(self.openHistory)
         self.winistory = None  # Variável para guardar a referêncida da janela
+        self.Btn_History.setEnabled(False)
 
         self.table.cellClicked.connect(self.updateUiCellClick)
 

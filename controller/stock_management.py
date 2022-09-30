@@ -4,6 +4,7 @@ from PyQt5.QtCore import QDate
 from model.purschaseHistory import purchaseHistory
 from model.stock import Stock
 from model.stockDAO import Stock_DAO
+from controller.purchase_history import History_ui
 
 FILE_UI = "view/management UIs/stock_management.ui"
 
@@ -23,7 +24,8 @@ class Stock_ui(QWidget):
         self.Btn_edit.clicked.connect(self.edit)
         self.Btn_delete.clicked.connect(self.delete)
         self.Btn_buy.clicked.connect(self.buy)
-        self.Btn_history.clicked.connect(self.openHistory)
+        #self.Btn_history.clicked.connect(self.openHistory)
+        self.Btn_history.setEnabled(False)
         
         self.table.cellClicked.connect(self.updateUiCellClick)
 
@@ -127,7 +129,11 @@ class Stock_ui(QWidget):
         self.clearFields()
 
     def openHistory(self):
-        pass
+        lineSel = self.table.currentRow()
+        if lineSel != None:
+            id = self.table.item(lineSel, 0).text()
+            self.winHistory = History_ui(int(id))
+            self.winHistory.show()
 
     def addTableItem(self, s: Stock):
         line = self.table.rowCount()

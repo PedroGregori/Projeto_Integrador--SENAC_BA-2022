@@ -302,6 +302,27 @@ QPushButton:pressed{
             </layout>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="logout">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(241, 241, 241);</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normalon>../assets/icons/logout_FILL0_wght400_GRAD0_opsz48.png</normalon>
+             </iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>26</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -574,42 +595,6 @@ QPushButton:pressed{
                <property name="icon">
                 <iconset>
                  <normaloff>../assets/icons/28579885-d3c3e8b6-7155-11e7-80a6-a0218b054199.png</normaloff>../assets/icons/28579885-d3c3e8b6-7155-11e7-80a6-a0218b054199.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="Btn_expenses">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI</family>
-                </font>
-               </property>
-               <property name="text">
-                <string>Custos</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="Btn_salesManagement">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI</family>
-                </font>
-               </property>
-               <property name="text">
-                <string>Vendas</string>
                </property>
               </widget>
              </item>

@@ -7,21 +7,28 @@ from controller.sale import Sale_ui
 from controller.customer_management import Customer_ui
 from controller.users_management import Users_ui
 from controller.stock_management import Stock_ui
-from controller.expenses_management import Expenses_ui
-from controller.sales_management import SalesManagement_ui
+#from controller.expenses_management import Expenses_ui
+#from controller.sales_management import SalesManagement_ui
 
 FILE_UI = 'view/main_window.ui'
-
 
 class MainWindow(QMainWindow):
 
     managementMenuEnable = False
 
-    def __init__(self, user):
+    def __init__(self, user, winLogin):
         QMainWindow.__init__(self)
         uic.loadUi(FILE_UI, self)
         
         self.user = user
+        self.winLogin = winLogin()
+        
+        """def Logoff(self):
+        self.hide()
+        self.winLogin.show()
+            
+        self.Btn_logout.clicked.connect(self.Logoff)"""
+        
         userType = self.user.userType
         self.userName.setText(self.user.name)
         self.userType.setText(userType)
@@ -35,24 +42,24 @@ class MainWindow(QMainWindow):
         self.pageCustomer = Customer_ui()
         self.pageUsers = Users_ui()
         self.pageStock = Stock_ui()
-        self.pageSales_management = SalesManagement_ui()
-        self.pageExpenses = Expenses_ui()
+        #self.pageSales_management = SalesManagement_ui()
+        #self.pageExpenses = Expenses_ui()
 
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageSale)
         self.stackedWidget.addWidget(self.pageCustomer)
         self.stackedWidget.addWidget(self.pageUsers)
         self.stackedWidget.addWidget(self.pageStock)
-        self.stackedWidget.addWidget(self.pageExpenses)
-        self.stackedWidget.addWidget(self.pageSales_management)
+        #self.stackedWidget.addWidget(self.pageExpenses)
+        #self.stackedWidget.addWidget(self.pageSales_management)
 
         self.Btn_Home.clicked.connect(self.actionMenu)
         self.Btn_Sale.clicked.connect(self.actionMenu)
         self.Btn_CustomerReg.clicked.connect(self.actionMenu)
         self.Btn_users.clicked.connect(self.actionMenu)
         self.Btn_stock.clicked.connect(self.actionMenu)
-        self.Btn_expenses.clicked.connect(self.actionMenu)
-        self.Btn_salesManagement.clicked.connect(self.actionMenu)
+        #self.Btn_expenses.clicked.connect(self.actionMenu)
+        #self.Btn_salesManagement.clicked.connect(self.actionMenu)
 
 
         self.Btn_Toggle.clicked.connect(
@@ -81,6 +88,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(0)
         if btnName == "Btn_Sale":
             self.stackedWidget.setCurrentIndex(1)
+            #ATUALIZA A UI DE VENDAS
             self.pageSale.getData()
         if btnName == "Btn_CustomerReg":
             self.stackedWidget.setCurrentIndex(2)
@@ -88,10 +96,10 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(3)
         if btnName == "Btn_stock":
             self.stackedWidget.setCurrentIndex(4)
-        if btnName == "Btn_expenses":
+        """if btnName == "Btn_expenses":
             self.stackedWidget.setCurrentIndex(5)
         if btnName == "Btn_salesManagement":
-            self.stackedWidget.setCurrentIndex(6)
+            self.stackedWidget.setCurrentIndex(6)"""
 
     def toggleMenu(self, maxWidth, enable):
         if enable:

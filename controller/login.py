@@ -25,5 +25,5 @@ class Login_ui(QWidget):
         else:
             u = user[0]
             self.hide()
-            window = MainWindow(u)
+            window = MainWindow(u, Login_ui)
             window.show()

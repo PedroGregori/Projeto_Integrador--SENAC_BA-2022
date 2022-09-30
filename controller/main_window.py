@@ -21,13 +21,13 @@ class MainWindow(QMainWindow):
         uic.loadUi(FILE_UI, self)
         
         self.user = user
-        self.winLogin = winLogin()
+        self.winLogin = winLogin
         
-        """def Logoff(self):
-        self.hide()
-        self.winLogin.show()
+        def Logoff(self):
+            self.hide()
+            self.winLogin.show()
             
-        self.Btn_logout.clicked.connect(self.Logoff)"""
+        self.Btn_logout.clicked.connect(Logoff)
         
         userType = self.user.userType
         self.userName.setText(self.user.name)

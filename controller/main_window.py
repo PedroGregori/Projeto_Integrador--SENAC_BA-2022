@@ -3,15 +3,12 @@ from PyQt5.QtWidgets import QMainWindow, QStatusBar
 from PyQt5 import uic
 
 from controller.home import Home_ui
-from controller.sell import Sell_ui
+from controller.sale import Sale_ui
 from controller.customer_management import Customer_ui
 from controller.users_management import Users_ui
 from controller.stock_management import Stock_ui
 from controller.expenses_management import Expenses_ui
 from controller.sales_management import SalesManagement_ui
-#from controller.login import Login_ui
-from model.userDAO import User_DAO
-from model.user import User
 
 FILE_UI = 'view/main_window.ui'
 
@@ -20,14 +17,20 @@ class MainWindow(QMainWindow):
 
     managementMenuEnable = False
 
-    def __init__(self):
+    def __init__(self, user):
         QMainWindow.__init__(self)
         uic.loadUi(FILE_UI, self)
         
-        #self.Login_ui = Login_ui(self)
+        self.user = user
+        userType = self.user.userType
+        self.userName.setText(self.user.name)
+        self.userType.setText(userType)
+        if userType == "Funcionario":
+            self.Btn_Management.setEnabled(False)
+        
         self.pageHome = Home_ui()
-        self.pageSale = Sell_ui()
-        self.pageSale.openCustomerWin.connect(
+        self.pageSale = Sale_ui(self.user.name)
+        self.pageSale.saleUiConnect.connect(
             lambda: self.stackedWidget.setCurrentIndex(2))
         self.pageCustomer = Customer_ui()
         self.pageUsers = Users_ui()
@@ -70,16 +73,6 @@ class MainWindow(QMainWindow):
         time = QTime.currentTime()
         self.statusBar.showMessage(
             f'{now.toString(Qt.DefaultLocaleLongDate)} - {time.toString()} ')
-        
-    """def compareUser(self, user):
-        userType = []
-        for u in user:
-            userInfo = User(u.id, u.name, u.cpf, u.rg, u.address, u.salary,
-                            u.user, u.password, u.email, u.phone, u.userType)
-            userType.append(userInfo.userType)
-        print(userType)
-        if "Funcionario" in userType:
-            self.Btn_management.setEnabled(False)"""
 
     def actionMenu(self):
         btn = self.sender()
@@ -88,6 +81,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(0)
         if btnName == "Btn_Sale":
             self.stackedWidget.setCurrentIndex(1)
+            self.pageSale.getData()
         if btnName == "Btn_CustomerReg":
             self.stackedWidget.setCurrentIndex(2)
         if btnName == "Btn_users":

@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
 from model.userDAO import User_DAO
-from model.user import User
 from model.LoginData import Login_Data
 from controller.main_window import MainWindow
 
@@ -13,7 +12,6 @@ class Login_ui(QWidget):
     def __init__(self):
         super(Login_ui, self).__init__()
         uic.loadUi(FILE_UI, self)
-        #self.mainWindow = MainWindow
 
         self.Btn_enter.clicked.connect(self.enter)
 
@@ -25,8 +23,7 @@ class Login_ui(QWidget):
         if len(user) == 0:
             print("usuário incorreto")
         else:
+            u = user[0]
             self.hide()
-            window = MainWindow()
+            window = MainWindow(u)
             window.show()
-            #self.mainWindow.compareUser(user)
-            #return user

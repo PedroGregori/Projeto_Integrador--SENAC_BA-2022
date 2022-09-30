@@ -9,6 +9,7 @@ FILE_UI = "view/management UIs/stock_management.ui"
 
 
 class Stock_ui(QWidget):
+    
     def __init__(self):
         super(Stock_ui, self).__init__()
         uic.loadUi(FILE_UI, self)
@@ -38,6 +39,7 @@ class Stock_ui(QWidget):
         purchases_lst = Stock_DAO.ALLpurchases()
         for p in purchases_lst:
             self.updateDate(p)
+            
 
     def confirm_dialog(self, msg):
         dlg = QMessageBox(self)
@@ -64,10 +66,8 @@ class Stock_ui(QWidget):
 
         purchaseCost = self.table.item(lineSel, 4).text()
         salePrice = self.table.item(lineSel, 6).text()
-        purchaseCost = purchaseCost.replace("R$", "")
-        purchaseCost = purchaseCost.replace(",", ".")
-        salePrice = salePrice.replace("R$", "")
-        salePrice = salePrice.replace(",", ".")
+        purchaseCost = purchaseCost.replace("R$", "").replace(",", ".")
+        salePrice = salePrice.replace("R$", "").replace(",", ".")
 
         self.provider.setText(self.table.item(lineSel, 1).text())
         self.product.setText(self.table.item(lineSel, 2).text())

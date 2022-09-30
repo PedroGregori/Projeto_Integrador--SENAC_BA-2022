@@ -1,6 +1,5 @@
 from .db import connect
-from .sale import Sale
-from .saleItems import SaleItems
+from .saleOBJ import Sale
 from .customer import Customer
 from .stock import Stock
 
@@ -25,7 +24,7 @@ class Sale_DAO():
         products_lst = []
         conn = connect()
         cursor = conn.cursor()
-        SQL = "SELECT * FROM customers;" 
+        SQL = "SELECT * FROM stock;" 
         cursor.execute(SQL)
         return_list = cursor.fetchall()
         for p  in return_list:
@@ -37,4 +36,28 @@ class Sale_DAO():
         return products_lst 
     
     def cadSale(s: Sale):
+        conn = connect()
+        cursor = conn.cursor()
+        SQL = "INSERT INTO sales(customerID, attendant, totalValue, valueReiceived, saleDate) VALUE (?,?,?,?,?);"
+        data = [s.customerID, s.attendant, s.totalValue, s.valueReceived, s.saleDate]
+        cursor.execute(SQL, data)
+        id_return = cursor.execute("SELECT last_insert_rowid();")
+        id = id_return.fetchall()[0] [0]
+        conn.commit()
         
+        SQL = "INSERT INTO saleItems(productID, items_quantity) VALUE (?,?);"
+        data = [s.productID, s.items_quantity]
+        cursor.execute(SQL, data)
+        conn.commit()
+        conn.close()
+            
+        return id
+    
+    def getFromStock(s: Sale):
+        conn = connect()
+        cursor = conn.cursor()
+        SQL = "UPDATE stock SET stock_quantity=(SELECT stock_quantity FROM stock WHERE id=?)-? WHERE id=?"
+        data = [s.productID, s.items_quantity, s.productID]
+        cursor.execute(SQL, data)
+        conn.commit()
+        conn.close()

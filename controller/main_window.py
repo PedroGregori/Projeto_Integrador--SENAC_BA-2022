@@ -21,9 +21,9 @@ class MainWindow(QMainWindow):
         uic.loadUi(FILE_UI, self)
         
         self.user = user
-        self.winLogin = winLogin
+        self.winLogin = winLogin()
         
-        def Logoff(self):
+        def Logoff():
             self.hide()
             self.winLogin.show()
             

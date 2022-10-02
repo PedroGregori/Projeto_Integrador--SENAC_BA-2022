@@ -1,6 +1,9 @@
 from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QDate, QTime, Qt, QTimer
 from PyQt5.QtWidgets import QMainWindow, QStatusBar
 from PyQt5 import uic
+import qdarkstyle
+from qdarkstyle.light.palette import LightPalette
+from qdarkstyle.dark.palette import DarkPalette
 
 from controller.home import Home_ui
 from controller.sale import Sale_ui
@@ -9,6 +12,7 @@ from controller.users_management import Users_ui
 from controller.stock_management import Stock_ui
 #from controller.expenses_management import Expenses_ui
 #from controller.sales_management import SalesManagement_ui
+
 
 FILE_UI = 'view/main_window.ui'
 
@@ -60,13 +64,14 @@ class MainWindow(QMainWindow):
         self.Btn_stock.clicked.connect(self.actionMenu)
         #self.Btn_expenses.clicked.connect(self.actionMenu)
         #self.Btn_salesManagement.clicked.connect(self.actionMenu)
-
+        self.Btn_theme.clicked.connect(self.themeSwitch)
+        
 
         self.Btn_Toggle.clicked.connect(
             lambda: self.toggleMenu(170, True))
         self.Btn_Management.clicked.connect(
             lambda: self.managementMenu(124, True))
-
+        
         self.statusBar = QStatusBar()
         self.setStatusBar(self.statusBar)
 
@@ -80,6 +85,13 @@ class MainWindow(QMainWindow):
         time = QTime.currentTime()
         self.statusBar.showMessage(
             f'{now.toString(Qt.DefaultLocaleLongDate)} - {time.toString()} ')
+        
+    def themeSwitch(self): 
+        if self.Btn_theme.isChecked():
+            self.setStyleSheet(qdarkstyle.load_stylesheet(palette=DarkPalette))
+        else:
+            self.setStyleSheet(qdarkstyle.load_stylesheet(palette=LightPalette))
+        
 
     def actionMenu(self):
         btn = self.sender()

@@ -24,9 +24,10 @@ class Sale_ui(QWidget):
             0, QHeaderView.ResizeToContents)
 
         self.Btn_newCustomer.clicked.connect(lambda: self.saleUiConnect.emit())
-        self.Btn_select.clicked.connect(self.select)
         self.Btn_add.clicked.connect(self.add)
         self.Btn_finish.clicked.connect(self.cadSale)
+        self.findProduct.activated.connect(self.select)
+        self.customer.activated.connect(self.select)
         self.getData()
 
     def clearData(self):
@@ -42,8 +43,8 @@ class Sale_ui(QWidget):
         products_lst = Sale_DAO.getProducts()
         for item in products_lst:
             self.findProduct.addItem(item.product, item)
-
-    def select(self):
+    
+    def select(self):    
         quantity = self.findProduct.currentData().stock_quantity
         price = self.findProduct.currentData().salePrice
         price = price.replace("R$", "").replace(",", ".")

@@ -108,6 +108,7 @@ class MainWindow(QMainWindow):
             self.stackedWidget.setCurrentIndex(3)
         if btnName == "Btn_stock":
             self.stackedWidget.setCurrentIndex(4)
+            self.pageStock.loadData()
         """if btnName == "Btn_expenses":
             self.stackedWidget.setCurrentIndex(5)
         if btnName == "Btn_salesManagement":
